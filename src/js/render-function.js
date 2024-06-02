@@ -6,7 +6,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 export function renderGallery(images) {
   const gallery = document.getElementById('results');
-  gallery.innerHTML = '';
 
   images.forEach(image => {
     const card = document.createElement('div');
@@ -26,17 +25,28 @@ export function renderGallery(images) {
         </div>
       </div>
     `;
-
     gallery.appendChild(card);
   });
 
   const lightbox = new SimpleLightbox('.gallery-link');
   lightbox.refresh();
+
+  smoothScroll();
 }
 
 export function showNotification(message) {
   iziToast.error({
     title: 'Error',
     message: message,
+  });
+}
+
+function smoothScroll() { 
+  const gallery = document.getElementById('results');
+  const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
   });
 }
