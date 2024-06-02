@@ -35,8 +35,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* styles.css */
@@ -73,7 +77,18 @@ body {
 .search-form button {
   width: 91px;
   height: 40px;
-  background-color: #007BFF;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 20px;
+  width: 91px;
+  height: 40px;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 20px;
