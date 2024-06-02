@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Vanilla App Template</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <form id="searchForm" class="search-form">
+      <label for="searchInput"></label>
+      <input
+        type="text"
+        id="searchInput"
+        name="search"
+        placeholder="Search images..."
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="results" id="results"></div>
     <script src="./main.js" type="module"></script>
-    <script src="./js/pixabay-api.js" type="module"></script>
-    <script src="./js/render-function.js" type="module"></script>
   </body>
 </html>
